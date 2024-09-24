@@ -18,6 +18,7 @@ def main():
             if event.type == pg.QUIT: return
 
         screen.blit(bg_img, [0, 0]) #3
+        screen.blit(koka_img, [300, 200]) #4
         pg.display.update()
         tmr += 1        
         clock.tick(10)
