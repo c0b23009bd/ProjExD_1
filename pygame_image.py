@@ -28,8 +28,8 @@ def main():
             koka_img_rct.move_ip((2,0))
         if key_lst[pg.K_LEFT]:
             koka_img_rct.move_ip((-1,0))  
-        else:
-            koka_img_rct.move_ip((-1,0)) #演習１   
+        
+        koka_img_rct.move_ip((-1,0)) #演習１   
         x = -(tmr % 3200) #6 #7-1 #7-2
         screen.blit(bg_img, [x, 0]) #3 #6
         screen.blit(bg1_img,[x+1600,0]) #7-1
