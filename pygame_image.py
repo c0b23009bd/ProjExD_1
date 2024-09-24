@@ -19,16 +19,8 @@ def main():
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
-        key_lst = pg.key.get_pressed() 
-        if key_lst[pg.K_UP]:
-            koka_img_rct.move_ip((0,-1))
-        if key_lst[pg.K_DOWN]:  
-            koka_img_rct.move_ip((0,+1))
-        if key_lst[pg.K_RIGHT]:
-            koka_img_rct.move_ip((2,0))
-        if key_lst[pg.K_LEFT]:
-            koka_img_rct.move_ip((-1,0))  
-        
+        key_lst = pg.key.get_pressed()
+        koka_img_rct.move_ip((key_lst[pg.K_RIGHT]*2-key_lst[pg.K_LEFT],key_lst[pg.K_DOWN]-key_lst[pg.K_UP]))#演習２
         koka_img_rct.move_ip((-1,0)) #演習１   
         x = -(tmr % 3200) #6 #7-1 #7-2
         screen.blit(bg_img, [x, 0]) #3 #6
