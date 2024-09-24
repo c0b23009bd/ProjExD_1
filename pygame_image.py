@@ -9,13 +9,15 @@ def main():
     pg.display.set_caption("はばたけ！こうかとん")
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
-    bg_img = pg.image.load("fig/pg_bg.jpg")
-    tmr = 0
+    bg_img = pg.image.load("fig/pg_bg.jpg") #1
+    koka_img = pg.image.load("fig/3.png") #2
+    koka_img = pg.transform.flip(koka_img,True,False) #2
+    tmr = 0 
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        screen.blit(bg_img, [0, 0])
+        screen.blit(bg_img, [0, 0]) #3
         pg.display.update()
         tmr += 1        
         clock.tick(10)
